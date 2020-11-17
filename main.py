@@ -1,11 +1,12 @@
 from test import run_test
+import pandas as pd
 
 res = run_test()
-res['dif'] = res['joblib'] - res['pickle']
 
 # Test multiple times
 for i in range(100):
-    res.append(run_test())
+    temp = run_test().copy()
+    res = pd.concat([res,temp])
 res['dif'] = res['joblib'] - res['pickle']
-
+print(res)
 res.groupby(res.index).agg({'mean','std'}).to_csv('results.csv')
