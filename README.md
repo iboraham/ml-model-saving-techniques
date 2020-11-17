@@ -3,4 +3,5 @@ This repository is used to analyze different types of tecniques that using for s
 
 ## Resources
 https://docs.python.org/3/library/pickle.html
+
 https://scikit-learn.org/stable/modules/model_persistence.html
